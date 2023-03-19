@@ -17,7 +17,7 @@ public class MeteorSpawner : MonoBehaviour
     IEnumerator SpawnMeteor()
     {
         Vector3 meteorPos = Random.onUnitSphere * distance;
-        Instantiate(meteorPrefab, meteorPos, Quaternion.identity, transform);
+        Instantiate(meteorPrefab, meteorPos, Quaternion.LookRotation(meteorPos), transform);
 
         yield return new WaitForSeconds(spawnRate);
 

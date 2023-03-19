@@ -20,9 +20,4 @@ public class GravityAttractor : MonoBehaviour
         body.rotation = Quaternion.Slerp(body.rotation, targetRotation, 50f * Time.deltaTime);
 
     }
-
-    public void Update()
-    {
-        transform.localScale = Vector3.one * FindObjectOfType<GameManager>().radius;
-    }
 }
