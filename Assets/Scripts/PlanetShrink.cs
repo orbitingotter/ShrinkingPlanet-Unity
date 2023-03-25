@@ -19,6 +19,9 @@ public class PlanetShrink : MonoBehaviour
     {
         radius -= shrinkRate * Time.deltaTime;
 
+        // todo : radius zero
+        //if (radius == 0.0f)
+            //Debug.Log("End Game");
         transform.localScale = Vector3.one * radius;
     }
 }
