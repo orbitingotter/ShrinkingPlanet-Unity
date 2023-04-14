@@ -9,10 +9,20 @@ public class GameManager : MonoBehaviour
     bool gameHasEnded = false;
     public void EndGame()
     {
-        if(!gameHasEnded)
+        if (!gameHasEnded)
         {
             gameHasEnded = true;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            RestartGame();
         }
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

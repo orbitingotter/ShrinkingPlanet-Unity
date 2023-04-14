@@ -20,7 +20,13 @@ public class MainMenu : MonoBehaviour
     // PLAY
     public void PlayGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        StartCoroutine(PlayRoutine());
+    }
+
+    IEnumerator PlayRoutine()
+    {
+        yield return new WaitForSeconds(0.83f);
+        FindObjectOfType<GameManager>().StartGame();
     }
 
 
