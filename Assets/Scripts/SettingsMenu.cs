@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class SettingsMenu : MonoBehaviour
     public Text lowText;
     public Text mediumText;
     public Text highText;
+
+    public AudioMixer mixer;
 
     void Start()
     {
@@ -43,5 +46,15 @@ public class SettingsMenu : MonoBehaviour
         {
             highText.font = highlightFont;
         }
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        mixer.SetFloat("MusicVolume", Mathf.Log10(volume) * 20);
+    }
+
+    public void SetSFXVolume(float volume)
+    {
+        mixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20 );
     }
 }

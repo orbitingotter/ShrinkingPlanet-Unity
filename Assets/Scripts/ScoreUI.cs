@@ -9,6 +9,6 @@ public class ScoreUI : MonoBehaviour
     public Text score;
     void Update()
     {
-        score.text = FindObjectOfType<PlanetShrink>().radius.ToString("0.0");
+        score.text = "d = " + FindObjectOfType<PlanetShrink>().radius.ToString("0.0") + "m";
     }
 }

@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class CarHeadlights : MonoBehaviour
 {
-    private bool headlightOn = false;
+    public bool headlightOn = false;
 
     public GameObject light;
     public GameObject player;
 
     public GameObject headlight1;
     public GameObject headlight2;
-
-    void Start()
-    {
-    }
 
     void Update()
     {

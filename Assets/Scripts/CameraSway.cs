@@ -17,8 +17,7 @@ public class CameraSway : MonoBehaviour
     void Update()
     {
         GenerateNewPositions();
-
-        transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * lerpSpeed);
+        transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * lerpSpeed * 2000);
         transform.rotation = Quaternion.Slerp(transform.rotation, newRotation, Time.deltaTime * lerpSpeed);
     }
 

@@ -7,7 +7,7 @@ public class PlanetShrink : MonoBehaviour
     public float radius { get; set; }
     public float initalRadius { get; } = 50.0f;
     public float shrinkRate;
-
+    public float endRadius;
 
     void Start()
     {
@@ -17,11 +17,9 @@ public class PlanetShrink : MonoBehaviour
 
     void Update()
     {
-        radius -= shrinkRate * Time.deltaTime;
-
-        // todo : radius zero
-        //if (radius == 0.0f)
-            //Debug.Log("End Game");
+        if (radius > endRadius)
+            radius -= shrinkRate * Time.deltaTime;
+;
         transform.localScale = Vector3.one * radius;
     }
 }
