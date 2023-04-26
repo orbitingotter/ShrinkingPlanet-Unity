@@ -55,6 +55,6 @@ public class SettingsMenu : MonoBehaviour
 
     public void SetSFXVolume(float volume)
     {
-        mixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20 );
+        mixer.SetFloat("SFXVolume", Mathf.Log10(volume) * 20);
     }
 }

@@ -12,14 +12,21 @@ public class CarHeadlights : MonoBehaviour
     public GameObject headlight1;
     public GameObject headlight2;
 
+    private Vector3 lightPos;
+    private Vector3 playerToLight;
+    private float distance;
+    private Vector3 origin;
+    private Vector3 direction;
+
+
     void Update()
     {
-        Vector3 lightPos = light.transform.position - 100.0f * light.transform.forward; // moving light far away from origin
+        lightPos = light.transform.position - 100.0f * light.transform.forward; // moving light far away from origin
 
-        Vector3 playerToLight = lightPos - player.transform.position;
-        float distance = playerToLight.magnitude;
-        Vector3 origin = player.transform.position;
-        Vector3 direction = playerToLight.normalized;
+        playerToLight = lightPos - player.transform.position;
+        distance = playerToLight.magnitude;
+        origin = player.transform.position;
+        direction = playerToLight.normalized;
 
 
         if (Physics.Raycast(origin, direction, distance))

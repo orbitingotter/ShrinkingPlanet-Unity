@@ -10,8 +10,11 @@ public class MeteorSpawner : MonoBehaviour
     public float distance = 150.0f;
     public int maxCraterCount = 50;
 
+    private CraterSpawner craterRef;
+
     void Start()
     {
+        craterRef = FindObjectOfType<CraterSpawner>();
         StartCoroutine(SpawnMeteor());
     }
 
@@ -23,7 +26,7 @@ public class MeteorSpawner : MonoBehaviour
         yield return new WaitForSeconds(spawnRate);
 
         // Limit total crater count
-        if (FindObjectOfType<CraterSpawner>().transform.childCount > maxCraterCount * 2)
+        if (craterRef.transform.childCount > maxCraterCount * 2)
             spawnRate = float.MaxValue;
 
         StartCoroutine(SpawnMeteor());

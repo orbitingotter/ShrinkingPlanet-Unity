@@ -14,6 +14,13 @@ public class RestartMenu : MonoBehaviour
 
     private float finalRadius;
     private DepthOfField dof;
+
+    private GameManager gmRef;
+
+    private void Start()
+    {
+        gmRef = FindObjectOfType<GameManager>();
+    }
     public void ShowMenu()
     {
         normalUI.SetActive(false);
@@ -32,12 +39,11 @@ public class RestartMenu : MonoBehaviour
             }
             GameObject.Find("RestartUI/ExitButton").GetComponentInChildren<Text>().color = new Color(205, 205, 205);
         }
-
     }
 
     private void Update()
     {
-        if (FindObjectOfType<GameManager>().gameHasEnded)
+        if (gmRef.gameHasEnded)
         {
             // shrink UI with planet
             shrinkUIgroup.transform.localScale = 1.2f * Vector3.one * FindObjectOfType<PlanetShrink>().radius / FindObjectOfType<PlanetShrink>().initalRadius;
@@ -46,15 +52,29 @@ public class RestartMenu : MonoBehaviour
             Camera.main.GetComponent<PostProcessVolume>().profile.TryGetSettings(out dof);
             dof.focalLength.value = Mathf.Lerp(dof.focalLength.value, 120.0f, 0.3f * Time.deltaTime);
 
-            // Keyboard input
-            if (Input.GetKey(KeyCode.Space))
-            {
-                FindObjectOfType<GameManager>().RestartGame();
-            }
 
-            if(Input.GetKey(KeyCode.Escape))
+            if(gmRef.isAndroid)
             {
-                FindObjectOfType<GameManager>().StartMainMenu();
+                if (Input.touchCount > 0)
+                {
+                    Touch touch = Input.GetTouch(0);
+
+                    if (touch.position.x > Screen.height / 10)
+                        gmRef.RestartGame();
+                }
+            }
+            else
+            {
+                // Keyboard input
+                if (Input.GetKey(KeyCode.Space))
+                {
+                    gmRef.RestartGame();
+                }
+
+                if (Input.GetKey(KeyCode.Escape))
+                {
+                    gmRef.StartMainMenu();
+                }
             }
         }
     }

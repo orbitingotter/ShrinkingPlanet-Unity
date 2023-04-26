@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 {
     public bool gameHasEnded = false;
 
+    public bool isAndroid = false;
+
     public void EndGame()
     {
         if (!gameHasEnded)
