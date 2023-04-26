@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     private float horizontal;
     private Rigidbody rb;
 
+    private GameManager gmRef;
+    private PlanetShrink planetRef;
     // android
     private float screenWidth;
     private bool isAndroid;
@@ -19,9 +21,11 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        gmRef = FindObjectOfType<GameManager>();
+        planetRef = FindObjectOfType<PlanetShrink>();
 
         //android
-        if(FindObjectOfType<GameManager>().isAndroid)
+        if(gmRef.isAndroid)
         {
             isAndroid = true;
             screenWidth = Screen.width;
@@ -54,5 +58,11 @@ public class PlayerController : MonoBehaviour
     {
         transform.RotateAroundLocal(transform.position, horizontal * horizontalSpeed * Time.deltaTime);
         rb.position = rb.position + transform.forward * moveSpeed * Time.fixedDeltaTime;
+
+        // fix - floating player
+        if(transform.position.magnitude > planetRef.radius)
+        {
+            rb.AddForce(transform.TransformDirection(Vector3.down) * 100.0f);
+        }
     }
 }

@@ -26,7 +26,7 @@ public class MeteorSpawner : MonoBehaviour
         yield return new WaitForSeconds(spawnRate);
 
         // Limit total crater count
-        if (craterRef.transform.childCount > maxCraterCount * 2)
+        if (craterRef.transform.childCount > maxCraterCount)
             spawnRate = float.MaxValue;
 
         StartCoroutine(SpawnMeteor());

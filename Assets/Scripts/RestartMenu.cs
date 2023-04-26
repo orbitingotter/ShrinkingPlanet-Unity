@@ -16,10 +16,12 @@ public class RestartMenu : MonoBehaviour
     private DepthOfField dof;
 
     private GameManager gmRef;
+    private PlanetShrink planetRef;
 
     private void Start()
     {
         gmRef = FindObjectOfType<GameManager>();
+        planetRef = FindObjectOfType<PlanetShrink>();
     }
     public void ShowMenu()
     {
@@ -46,7 +48,7 @@ public class RestartMenu : MonoBehaviour
         if (gmRef.gameHasEnded)
         {
             // shrink UI with planet
-            shrinkUIgroup.transform.localScale = 1.2f * Vector3.one * FindObjectOfType<PlanetShrink>().radius / FindObjectOfType<PlanetShrink>().initalRadius;
+            shrinkUIgroup.transform.localScale = 1.2f * Vector3.one * planetRef.radius / planetRef.initalRadius;
 
             // depth of field change
             Camera.main.GetComponent<PostProcessVolume>().profile.TryGetSettings(out dof);
@@ -59,7 +61,7 @@ public class RestartMenu : MonoBehaviour
                 {
                     Touch touch = Input.GetTouch(0);
 
-                    if (touch.position.x > Screen.height / 10)
+                    if (touch.position.y > Screen.height / 3 && touch.phase == TouchPhase.Began)
                         gmRef.RestartGame();
                 }
             }

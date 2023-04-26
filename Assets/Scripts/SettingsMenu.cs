@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityEngine.Rendering.PostProcessing;
+
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -15,36 +17,64 @@ public class SettingsMenu : MonoBehaviour
 
     public AudioMixer mixer;
 
+    // settings var
+    private Bloom bloom;
+    private DepthOfField dof;
+    private MotionBlur motionBlur;
+    private Vignette vignette;
+
     void Start()
     {
-        UpdateFont();
+        UpdateQuality();
     }
     public void SetQuality(int qualityIndex)
     {
         QualitySettings.SetQualityLevel(qualityIndex);
-        UpdateFont();
+        UpdateQuality();
     }
 
-    void UpdateFont()
+    void UpdateQuality()
     {
+        Debug.Log(QualitySettings.GetQualityLevel());
         lowText.font = normalFont;
         mediumText.font = normalFont;
         highText.font = normalFont;
 
+        Camera.main.GetComponent<PostProcessVolume>().profile.TryGetSettings(out bloom);
+        Camera.main.GetComponent<PostProcessVolume>().profile.TryGetSettings(out dof);
+        Camera.main.GetComponent<PostProcessVolume>().profile.TryGetSettings(out motionBlur);
+        Camera.main.GetComponent<PostProcessVolume>().profile.TryGetSettings(out vignette);
+
+
         // Low
-        if (QualitySettings.GetQualityLevel() == 1)
+        if (QualitySettings.GetQualityLevel() == 0)
         {
             lowText.font = highlightFont;
+
+            bloom.active = false;
+            dof.active = false;
+            motionBlur.active = false;
+            vignette.active = false;
         }
         // Medium
-        if (QualitySettings.GetQualityLevel() == 3)
+        if (QualitySettings.GetQualityLevel() == 1)
         {
             mediumText.font = highlightFont;
+
+            bloom.active = true;
+            dof.active = true;
+            motionBlur.active = true;
+            vignette.active = false;
         }
         // High
-        if (QualitySettings.GetQualityLevel() == 5)
+        if (QualitySettings.GetQualityLevel() == 2)
         {
             highText.font = highlightFont;
+
+            bloom.active = true;
+            dof.active = true;
+            motionBlur.active = true;
+            vignette.active = true;
         }
     }
 
