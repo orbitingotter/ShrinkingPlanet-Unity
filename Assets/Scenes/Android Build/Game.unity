@@ -1404,6 +1404,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8416864884192665552, guid: 9c1883be9c5d56a4dba5188d18855a97, type: 3}
+      propertyPath: sounds.Array.data[0].mixer
+      value: 
+      objectReference: {fileID: 7513499254678553124, guid: 689325e289bb6bc4ab067ba28a194691, type: 2}
+    - target: {fileID: 8416864884192665552, guid: 9c1883be9c5d56a4dba5188d18855a97, type: 3}
+      propertyPath: sounds.Array.data[1].mixer
+      value: 
+      objectReference: {fileID: 7513499254678553124, guid: 689325e289bb6bc4ab067ba28a194691, type: 2}
+    - target: {fileID: 8416864884192665552, guid: 9c1883be9c5d56a4dba5188d18855a97, type: 3}
+      propertyPath: sounds.Array.data[2].mixer
+      value: 
+      objectReference: {fileID: -3372901611262087189, guid: 689325e289bb6bc4ab067ba28a194691, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c1883be9c5d56a4dba5188d18855a97, type: 3}
 --- !u!1 &1520935566

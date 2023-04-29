@@ -14,9 +14,6 @@ public class CarHeadlights : MonoBehaviour
 
     private Vector3 lightPos;
     private Vector3 playerToLight;
-    private float distance;
-    private Vector3 origin;
-    private Vector3 direction;
 
 
     void Update()
@@ -24,12 +21,9 @@ public class CarHeadlights : MonoBehaviour
         lightPos = light.transform.position - 100.0f * light.transform.forward; // moving light far away from origin
 
         playerToLight = lightPos - player.transform.position;
-        distance = playerToLight.magnitude;
-        origin = player.transform.position;
-        direction = playerToLight.normalized;
 
 
-        if (Physics.Raycast(origin, direction, distance))
+        if (Physics.Raycast(player.transform.position, playerToLight.normalized, playerToLight.magnitude))
         {
             headlightOn = true;
         }

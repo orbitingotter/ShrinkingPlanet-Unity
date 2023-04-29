@@ -7,11 +7,10 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Planet
+  m_Name: Red
   m_Shader: {fileID: 10703, guid: 0000000000000000f000000000000000, type: 0}
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _GLOSSYREFLECTIONS_OFF
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -37,20 +36,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _DetailTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _FurTex:
-        m_Texture: {fileID: 2800000, guid: baa84a4276db5a040ad27bff4953a481, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: ebd5b70f0d2cbc04bb65502acf8df53b, type: 3}
+        m_Texture: {fileID: 2800000, guid: 11bd5d9eeb7b47a4fb14cc48a85942fb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -68,41 +59,22 @@ Material:
     m_Ints: []
     m_Floats:
     - _BumpScale: 1
-    - _Cull: 2
-    - _Cutoff: 0.377
-    - _CutoffEnd: 0.516
+    - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _EdgeFade: 0.382
-    - _EmissiveIntensity: 4.1
-    - _FurDensity: 0
-    - _FurLength: 0.01
-    - _FurShading: 0.46
-    - _FurThinness: 10
     - _GlossMapScale: 1
-    - _Glossiness: 0
-    - _GlossyReflections: 0
-    - _GravityStrength: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Parallax: 0.08
-    - _RimPower: 20
-    - _Shininess: 0.01
+    - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _WindQuality: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.28627452, g: 0.77254903, b: 0.22745098, a: 1}
+    - _Color: {r: 0.9063317, g: 0, b: 0.08417123, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissiveColor: {r: 1, g: 1, b: 1, a: 1}
-    - _ForceGlobal: {r: 0, g: 0, b: 0, a: 0}
-    - _ForceLocal: {r: 0, g: 0, b: 0, a: 0}
-    - _Gravity: {r: 0, g: 0, b: 0, a: 1}
-    - _HueVariation: {r: 1, g: 0.5, b: 0, a: 0.1}
-    - _RimColor: {r: 0.28627452, g: 0.7725491, b: 0.227451, a: 1}
-    - _Specular: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []
