@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-//using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 
 
@@ -14,47 +15,45 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
-    //// settings scene to scene
-    //private Bloom bloom;
-    //private DepthOfField dof;
-    //private MotionBlur motionBlur;
-    //private Vignette vignette;
+    // settings scene to scene
+    private Volume volume;
+    private Vignette vignette;
+    private Bloom bloom;
+    private DepthOfField dof;
 
     void Start()
     {
+        volume = FindObjectOfType<Volume>();
+        volume.profile.TryGet(out vignette);
+        volume.profile.TryGet(out bloom);
+        volume.profile.TryGet(out dof);
+
         ChangeQuality();
     }
 
     public void ChangeQuality()
     {
-        //Camera.main.GetComponent<PostProcessVolume>().profile.TryGetSettings(out bloom);
-        //Camera.main.GetComponent<PostProcessVolume>().profile.TryGetSettings(out dof);
-        //Camera.main.GetComponent<PostProcessVolume>().profile.TryGetSettings(out motionBlur);
-        //Camera.main.GetComponent<PostProcessVolume>().profile.TryGetSettings(out vignette);
-        //// Low
-        //if (QualitySettings.GetQualityLevel() == 0)
-        //{
-        //    bloom.active = false;
-        //    dof.active = false;
-        //    motionBlur.active = false;
-        //    vignette.active = false;
-        //}
-        //// Medium
-        //if (QualitySettings.GetQualityLevel() == 1)
-        //{
-        //    bloom.active = true;
-        //    dof.active = true;
-        //    motionBlur.active = true;
-        //    vignette.active = false;
-        //}
-        //// High
-        //if (QualitySettings.GetQualityLevel() == 2)
-        //{
-        //    bloom.active = true;
-        //    dof.active = true;
-        //    motionBlur.active = true;
-        //    vignette.active = true;
-        //}
+        // Low
+        if (QualitySettings.GetQualityLevel() == 0)
+        {
+            bloom.active = false;
+            dof.active = false;
+            vignette.active = false;
+        }
+        // Medium
+        if (QualitySettings.GetQualityLevel() == 1)
+        {
+            bloom.active = true;
+            dof.active = true;
+            vignette.active = false;
+        }
+        // High
+        if (QualitySettings.GetQualityLevel() == 2)
+        {
+            bloom.active = true;
+            dof.active = true;
+            vignette.active = true;
+        }
     }
 
     public void EndGame()

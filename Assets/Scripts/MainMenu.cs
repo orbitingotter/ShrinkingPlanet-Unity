@@ -42,7 +42,7 @@ public class MainMenu : MonoBehaviour
         Camera.main.backgroundColor = Color.Lerp(Camera.main.backgroundColor, targetSkyColor, lerpSpeed);
         directionalLight.intensity -= intensityDecrement;
 
-        if (Time.time - endTime > 2.0f)
+        if (Time.time - endTime > 3.0f)
         {
             Debug.Log("QUIT");
             Application.Quit();

@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-//using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class RestartMenu : MonoBehaviour
 {
@@ -13,13 +14,20 @@ public class RestartMenu : MonoBehaviour
     public Text finalScore;
 
     private float finalRadius;
-    //private DepthOfField dof;
+    private Volume volume;
+    private DepthOfField dof;
 
     private GameManager gmRef;
     private PlanetShrink planetRef;
 
+    private Touch touch;
+    private bool restartClickedBegan;
+
     private void Start()
     {
+        volume = FindObjectOfType<Volume>();
+        volume.profile.TryGet(out dof);
+
         gmRef = FindObjectOfType<GameManager>();
         planetRef = FindObjectOfType<PlanetShrink>();
     }
@@ -50,19 +58,30 @@ public class RestartMenu : MonoBehaviour
             // shrink UI with planet
             shrinkUIgroup.transform.localScale = 1.2f * Vector3.one * planetRef.radius / planetRef.initalRadius;
 
-            //// depth of field change
-            //Camera.main.GetComponent<PostProcessVolume>().profile.TryGetSettings(out dof);
-            //dof.focalLength.value = Mathf.Lerp(dof.focalLength.value, 120.0f, 0.3f * Time.deltaTime);
+            // depth of field change
+            //dof.gaussianStart.value = Mathf.Lerp(dof.gaussianStart.value, 250.0f, 0.35f * Time.deltaTime);
+
+            dof.gaussianStart.value = Mathf.Lerp(dof.gaussianStart.value, 0.0f, 0.35f * Time.deltaTime);
+            dof.gaussianEnd.value = Mathf.Lerp(dof.gaussianEnd.value, 0.0f, 0.35f * Time.deltaTime);
 
 
-            if(gmRef.isAndroid)
+            if (gmRef.isAndroid)
             {
                 if (Input.touchCount > 0)
                 {
-                    Touch touch = Input.GetTouch(0);
+                    touch = Input.GetTouch(0);
 
                     if (touch.position.y > Screen.height / 3 && touch.phase == TouchPhase.Began)
+                    {
+                        restartClickedBegan = true;
+                    }
+
+                    if(restartClickedBegan && touch.phase == TouchPhase.Ended)
                         gmRef.RestartGame();
+                }
+                else
+                {
+                    restartClickedBegan = false;
                 }
             }
             else
