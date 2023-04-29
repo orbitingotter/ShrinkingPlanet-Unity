@@ -7,7 +7,9 @@ You are stuck in an alternative universe where the planet is shrinking and you h
 
 ## Gameplay
 
-Youtube Link -
+![SP-windows-gif](https://user-images.githubusercontent.com/112700146/235308070-572f8230-e6c8-4546-bab7-983a6f73fc0e.gif)
+
+Youtube Link (with audio)-
 
 [![Shrinking Planet Gameplay](https://img.youtube.com/vi/1JAc29utN0A/0.jpg)](https://www.youtube.com/watch?v=1JAc29utN0A)
 
@@ -18,15 +20,15 @@ Youtube Link -
 
 **Latest Version Download** -
 
-Release Page - [v1.0.1](https://github.com/orbitingotter/ShrinkingPlanet-Unity/releases/tag/v1.0.1)
+Release Page - [v1.0.2](https://github.com/orbitingotter/ShrinkingPlanet-Unity/releases/tag/v1.0.2)
 
-Windows - [v1.0.1](https://github.com/orbitingotter/ShrinkingPlanet-Unity/releases/download/v1.0.1/windows-x64-SP-1.0.1.zip)
+Windows - [v1.0.2](https://github.com/orbitingotter/ShrinkingPlanet-Unity/releases/download/v1.0.2/windows-x64-SP-1.0.2.zip)
 
-Android - [v1.0.1](https://github.com/orbitingotter/ShrinkingPlanet-Unity/releases/download/v1.0.1/android-SP-v1.0.1.apk)
+Android - [v1.0.2](https://github.com/orbitingotter/ShrinkingPlanet-Unity/releases/download/v1.0.2/android-SP-v1.0.2.apk)
 
-Note - Android version needs to be optimised, change settings to low if fps is too low.
+Note - For android, change settings to low if fps is too low.
 
-For other platforms, like iOS and Linux, i cannot play-test and compile it, you have to do it yourselves.
+For other platforms, like iOS and Linux, i cannot play test or compile it, feel free to clone and compile.
 
 ## Bug Report & Features
 If you have found any bugs or have suggestions, open up a issue on the repo with info - platform, optional video, reproduction steps.
@@ -52,7 +54,7 @@ Here's what the scripts do (general overview) -
 Car and planet models were imported as free assets 
 
  ## Music - devlog
- Most of the arcade games of this type have fast paced music, i wanted to go the opposite direction and make the music more laid back and soothing. After starting with the chord progression, it transformed into a weird combination of  jazzy-neosoul-r&b-lofi genre.
+ Most of the arcade games of this type have fast paced music, i wanted to go the opposite direction and make the music more laid back and soothing. End result transformed into a weird combination of  jazzy-neosoul-r&b-lofi genre.
 
 Some music theory if anyone interested -
 
