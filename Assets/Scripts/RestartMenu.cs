@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Rendering.PostProcessing;
+//using UnityEngine.Rendering.PostProcessing;
 
 public class RestartMenu : MonoBehaviour
 {
@@ -13,7 +13,7 @@ public class RestartMenu : MonoBehaviour
     public Text finalScore;
 
     private float finalRadius;
-    private DepthOfField dof;
+    //private DepthOfField dof;
 
     private GameManager gmRef;
     private PlanetShrink planetRef;
@@ -50,9 +50,9 @@ public class RestartMenu : MonoBehaviour
             // shrink UI with planet
             shrinkUIgroup.transform.localScale = 1.2f * Vector3.one * planetRef.radius / planetRef.initalRadius;
 
-            // depth of field change
-            Camera.main.GetComponent<PostProcessVolume>().profile.TryGetSettings(out dof);
-            dof.focalLength.value = Mathf.Lerp(dof.focalLength.value, 120.0f, 0.3f * Time.deltaTime);
+            //// depth of field change
+            //Camera.main.GetComponent<PostProcessVolume>().profile.TryGetSettings(out dof);
+            //dof.focalLength.value = Mathf.Lerp(dof.focalLength.value, 120.0f, 0.3f * Time.deltaTime);
 
 
             if(gmRef.isAndroid)

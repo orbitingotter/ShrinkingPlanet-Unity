@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
-using UnityEngine.Rendering.PostProcessing;
+//using UnityEngine.Rendering.PostProcessing;
 
 
 public class SettingsMenu : MonoBehaviour
@@ -17,11 +17,11 @@ public class SettingsMenu : MonoBehaviour
 
     public AudioMixer mixer;
 
-    // settings var
-    private Bloom bloom;
-    private DepthOfField dof;
-    private MotionBlur motionBlur;
-    private Vignette vignette;
+    //// settings var
+    //private Bloom bloom;
+    //private DepthOfField dof;
+    //private MotionBlur motionBlur;
+    //private Vignette vignette;
 
     void Start()
     {
@@ -35,15 +35,15 @@ public class SettingsMenu : MonoBehaviour
 
     void UpdateQuality()
     {
-        Debug.Log(QualitySettings.GetQualityLevel());
+        //Debug.Log(QualitySettings.GetQualityLevel());
         lowText.font = normalFont;
         mediumText.font = normalFont;
         highText.font = normalFont;
 
-        Camera.main.GetComponent<PostProcessVolume>().profile.TryGetSettings(out bloom);
-        Camera.main.GetComponent<PostProcessVolume>().profile.TryGetSettings(out dof);
-        Camera.main.GetComponent<PostProcessVolume>().profile.TryGetSettings(out motionBlur);
-        Camera.main.GetComponent<PostProcessVolume>().profile.TryGetSettings(out vignette);
+        //Camera.main.GetComponent<PostProcessVolume>().profile.TryGetSettings(out bloom);
+        //Camera.main.GetComponent<PostProcessVolume>().profile.TryGetSettings(out dof);
+        //Camera.main.GetComponent<PostProcessVolume>().profile.TryGetSettings(out motionBlur);
+        //Camera.main.GetComponent<PostProcessVolume>().profile.TryGetSettings(out vignette);
 
 
         // Low
@@ -51,30 +51,30 @@ public class SettingsMenu : MonoBehaviour
         {
             lowText.font = highlightFont;
 
-            bloom.active = false;
-            dof.active = false;
-            motionBlur.active = false;
-            vignette.active = false;
+            //bloom.active = false;
+            //dof.active = false;
+            //motionBlur.active = false;
+            //vignette.active = false;
         }
         // Medium
         if (QualitySettings.GetQualityLevel() == 1)
         {
             mediumText.font = highlightFont;
 
-            bloom.active = true;
-            dof.active = true;
-            motionBlur.active = true;
-            vignette.active = false;
+            //bloom.active = true;
+            //dof.active = true;
+            //motionBlur.active = true;
+            //vignette.active = false;
         }
         // High
         if (QualitySettings.GetQualityLevel() == 2)
         {
             highText.font = highlightFont;
 
-            bloom.active = true;
-            dof.active = true;
-            motionBlur.active = true;
-            vignette.active = true;
+            //bloom.active = true;
+            //dof.active = true;
+            //motionBlur.active = true;
+            //vignette.active = true;
         }
     }
 
