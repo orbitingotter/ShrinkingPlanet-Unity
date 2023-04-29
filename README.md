@@ -3,7 +3,7 @@ A game inspired from [Brackeys LD38 submission](https://www.youtube.com/watch?v=
 
 ## What is the game?
 
-You are stuck in an alternative universe where the planet is shrinking and you have to survive as long as possible, avoiding the meteors and crater in the process.
+You are stuck in an alternative universe where you are stuck in a car with no brakes, the planet is shrinking and you have to survive as long as possible, avoiding the meteors and crater in the process.
 
 ## Gameplay
 
@@ -60,7 +60,9 @@ Some music theory if anyone interested -
 
  **Chord Progression** - ii V I vi in the E♭ major key - extremely common progression in jazz which looks like - Fmin7, B♭7, E♭maj7, Cmin7
 
- This sounds boring, so after adding extensions, it becomes - Fmin9, B♭11sus2 - B♭13, E♭maj9, Cmin7. I learned this on guitar and then converted the notes to midi for piano and other instruments. Here's a [video](https://www.youtube.com/watch?v=57HErJ8H3_k) of what the first iteration sounded like on guitar.
+ This sounds boring, so after adding extensions, it becomes - Fmin9, B♭11sus2 - B♭13, E♭maj9, Cmin7. I learned this on guitar and then converted the notes to midi for piano and other instruments.
+ 
+ Here's a **[video](https://www.youtube.com/watch?v=1GcfIeMmhwA)** of what the first iteration/idea sounded like on guitar.
 
  Added percussions, foley sounds & atmosphere, synth pads, bass etc.
 
