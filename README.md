@@ -1,17 +1,22 @@
 # ShrinkingPlanet - Unity
-A game inspired from [Brackeys LD38 submission](https://www.youtube.com/watch?v=XldCg9sQYx0) in Unity Engine. It is currently supported on x64 Windows and Android.
+A game inspired from **[Brackeys LD38 submission](https://www.youtube.com/watch?v=XldCg9sQYx0)** in Unity Engine. It is currently supported on x64 Windows and Android.
+ 
+Also check out the **[OpenGL repo](https://github.com/orbitingotter/ShrinkingPlanet-OpenGL)** where i made the same game completely in OpenGL 4.5 from scratch.
 
 ## What is the game?
 
-You are stuck in an alternative universe where you are stuck in a car with no brakes, the planet is shrinking and you have to survive as long as possible, avoiding the meteors and crater in the process.
+You are in an alternative universe where you are stuck in a car with no brakes, the planet is shrinking and you have to survive as long as possible, avoiding the meteors and crater in the process.
 
 ## Gameplay
 
-![SP-windows-gif](https://user-images.githubusercontent.com/112700146/235308070-572f8230-e6c8-4546-bab7-983a6f73fc0e.gif)
 
-Youtube Link (with audio)-
+| Preview GIF |
+| -- |
+| ![SP-windows-gif](https://user-images.githubusercontent.com/112700146/235308070-572f8230-e6c8-4546-bab7-983a6f73fc0e.gif) |
 
-[![Shrinking Planet Gameplay](https://img.youtube.com/vi/1JAc29utN0A/0.jpg)](https://www.youtube.com/watch?v=1JAc29utN0A)
+| Youtube link with audio |
+| -- |
+| [![Shrinking Planet Gameplay](https://img.youtube.com/vi/1JAc29utN0A/0.jpg)](https://www.youtube.com/watch?v=1JAc29utN0A) |
 
 ## How can i play?
 
@@ -20,11 +25,11 @@ Youtube Link (with audio)-
 
 **Latest Version Download** -
 
-Release Page - [v1.0.2](https://github.com/orbitingotter/ShrinkingPlanet-Unity/releases/tag/v1.0.2)
+Release Page - **[v1.0.2](https://github.com/orbitingotter/ShrinkingPlanet-Unity/releases/tag/v1.0.2)**
 
-Windows - [v1.0.2](https://github.com/orbitingotter/ShrinkingPlanet-Unity/releases/download/v1.0.2/windows-x64-SP-1.0.2.zip)
+Windows - **[v1.0.2](https://github.com/orbitingotter/ShrinkingPlanet-Unity/releases/download/v1.0.2/windows-x64-SP-1.0.2.zip)**
 
-Android - [v1.0.2](https://github.com/orbitingotter/ShrinkingPlanet-Unity/releases/download/v1.0.2/android-SP-v1.0.2.apk)
+Android - **[v1.0.2](https://github.com/orbitingotter/ShrinkingPlanet-Unity/releases/download/v1.0.2/android-SP-v1.0.2.apk)**
 
 Note - For android, change settings to low if fps is too low.
 
@@ -58,21 +63,29 @@ Car and planet models were imported as free assets
 
 Some music theory if anyone interested -
 
- **Chord Progression** - ii V I vi in the E♭ major key - extremely common progression in jazz which looks like - Fmin7, B♭7, E♭maj7, Cmin7
+ **Chord Progression** - ii V I vi in the key of E♭ major  - extremely common progression in jazz which looks like - Fmin7, B♭7, E♭maj7, Cmin7
 
- This sounds boring, so after adding extensions, it becomes - Fmin9, B♭11sus2 - B♭13, E♭maj9, Cmin7. I learned this on guitar and then converted the notes to midi for piano and other instruments.
- 
- Here's a **[video](https://www.youtube.com/watch?v=1GcfIeMmhwA)** of what the first iteration/idea sounded like on guitar.
+ This sounds boring, so after adding extensions, it becomes - Fmin9, B♭11sus2 - B♭13, E♭maj9, Cmin7 which i learned on guitar and then converted the notes to midi for piano and other instruments.
+Here's a **[video](https://www.youtube.com/watch?v=1GcfIeMmhwA)** of what the first iteration/idea sounded like on guitar.
 
  Added percussions, foley sounds & atmosphere, synth pads, bass etc.
 
- Tried to mix to best of my ability with eq, compression, reverb etc, but i suck at mixing & mastering, it could sound a lot better still.
+ Tried to mix to best of my ability with eq, compression, reverb etc, best fitted for a soundtrack and non intrusive, but i suck at mixing & mastering, it could sound a lot better still.
 
  **Software Used** - Ableton Live 11 & Audacity
 
-Heres a playthrough of the song in ableton-
 
-[![Shrinking Planet](https://img.youtube.com/vi/AnQGixURMfU/0.jpg)](https://www.youtube.com/watch?v=AnQGixURMfU)
+| Soundtrack |
+| -- |
+| [![Shrinking Planet](https://img.youtube.com/vi/R-cDufZHPEs/0.jpg)](https://www.youtube.com/watch?v=R-cDufZHPEs) |
+
+
+| Ableton playthrough |
+| -- |
+| [![Shrinking Planet](https://img.youtube.com/vi/AnQGixURMfU/0.jpg)](https://www.youtube.com/watch?v=AnQGixURMfU) |
+
+
+
 
 ## Credits
 
@@ -81,6 +94,5 @@ Chandan Priyadarshi
 Divyanshu Poddar
 
 Rahul Stephen 
-
 
 **Special thanks to Brackeys**
